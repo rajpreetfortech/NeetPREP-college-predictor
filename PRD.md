@@ -28,9 +28,10 @@ I built a working, mobile-first NEET college predictor that takes students from 
 
 I focused first on getting the complete journey working: a student visits the page, enters their details, receives a prediction, and generates a trackable lead record. I used HTML, CSS, JavaScript, Google Apps Script and Google Sheets to keep the solution lightweight and practical to deploy.
 
-##Note on future imporvement: Features such as OTP-based phone verification, side-by-side college comparisons, advanced filters and automated counselling reminders remain future improvements. The counselling CTA does not currently arrange a callback, so a complete counselling-request workflow would need to be built separately.
+## 5. Note on future imporvement
+Features such as OTP-based phone verification, side-by-side college comparisons, advanced filters and automated counselling reminders remain future improvements. The counselling CTA does not currently arrange a callback, so a complete counselling-request workflow would need to be built separately.
 
-## 5. How I Will Measure Success
+## 6. How I Will Measure Success
 
 My initial target is for **at least 30 out of every 100 recorded page views to lead to a valid, genuine submission**.
 
@@ -38,14 +39,14 @@ I'll compare valid, non-test lead submissions with recorded page views to unders
 
 I'll also look at form starts, result views and acquisition sources to identify where students drop off and which channels bring in genuine leads.
 
-## 6. Technology
+## 7. Technology
 
 - **Frontend:** HTML, CSS and JavaScript
 - **Backend:** Google Apps Script
 - **Storage and analytics:** Google Sheets
 - **Hosting and version control:** Google Apps Script Web App and GitHub
 
-## 7. How AI Helped Me Build It
+## 8. How AI Helped Me Build It
 
 I used AI as a building partner throughout this project. We worked through the process step by step from shaping the product requirements and planning the user journey to writing and debugging code, improving the interface, setting up analytics, checking edge cases and refining the documentation.
 
