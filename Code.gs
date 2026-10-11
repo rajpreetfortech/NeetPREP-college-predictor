@@ -116,13 +116,45 @@ function submitLead(payload) {
     sheet = ss.getSheetByName('Leads');
   }
 
-  sheet.appendRow([
-    new Date(), name, phone, score, category, state, rank,
-    String(payload.utm_source || '').slice(0, 200),
-    String(payload.utm_medium || '').slice(0, 200),
-    String(payload.utm_campaign || '').slice(0, 200),
-    payload.isTest === true ? 'YES' : 'NO'
-  ]);
+    const lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+
+  try {
+    const isTest = payload.isTest === true;
+
+    // Prevent duplicate phone numbers for real submissions.
+    if (!isTest) {
+      const lastRow = sheet.getLastRow();
+
+      if (lastRow >= 2) {
+        const phones = sheet
+          .getRange(2, 3, lastRow - 1, 1)
+          .getDisplayValues();
+
+        const normalizedPhone = phone.replace(/\D/g, '');
+
+        const duplicate = phones.some(row =>
+          String(row[0] || '').replace(/\D/g, '') === normalizedPhone
+        );
+
+        if (duplicate) {
+          throw new Error(
+            'This mobile number has already been used. Please check the number or contact the team if you need help.'
+          );
+        }
+      }
+    }
+
+    sheet.appendRow([
+      new Date(), name, phone, score, category, state, rank,
+      String(payload.utm_source || '').slice(0, 200),
+      String(payload.utm_medium || '').slice(0, 200),
+      String(payload.utm_campaign || '').slice(0, 200),
+      isTest ? 'YES' : 'NO'
+    ]);
+  } finally {
+    lock.releaseLock();
+  }
 
   return { ok: true, predictedAir: rank };
 }
