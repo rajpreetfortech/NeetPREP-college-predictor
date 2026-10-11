@@ -110,9 +110,13 @@ The dashboard uses these events to understand acquisition and funnel activity. E
 
 Separate UTM-tagged links support acquisition analysis across:
 
-- **LinkedIn:** Organic professional sharing.
+- **LinkedIn:** Organic professional sharing. https://script.google.com/macros/s/AKfycby8Z169EqdTUOca3JzPT5g7dmWWktocIMLcf0YHTMmteuPL8mK6gGe21zMK5qygY_3u/exec?utm_source=linkedin&utm_medium=organic&utm_campaign=neet_predictor
+- 
 - **WhatsApp:** Group and referral sharing.
+- https://script.google.com/macros/s/AKfycby8Z169EqdTUOca3JzPT5g7dmWWktocIMLcf0YHTMmteuPL8mK6gGe21zMK5qygY_3u/exec?utm_source=whatsapp_group&utm_medium=social&utm_campaign=neet_predictor
+- 
 - **Instagram:** Story-based sharing.
+- https://script.google.com/macros/s/AKfycby8Z169EqdTUOca3JzPT5g7dmWWktocIMLcf0YHTMmteuPL8mK6gGe21zMK5qygY_3u/exec?utm_source=instagram_story&utm_medium=social&utm_campaign=neet_predictor
 
 Campaign parameters are recorded where available, allowing traffic and lead sources to be compared in the analytics dashboard.
 
